@@ -44,11 +44,17 @@ function handleTrackClick(track) {
 
   <main class="pt-24 min-h-screen bg-gray-500 px-4 flex flex-col items-center">
     <!-- 🔍 Search Field -->
-    <div class="w-full max-w-md mb-6">
+    <div class="w-full px-4 md:max-w-md mb-6">
       <div
         class="flex flex-col md:flex-row items-stretch gap-3 md:gap-0 bg-gray-400 shadow-md rounded-lg overflow-hidden"
       >
-        <button type="" disabled class="bg-black/40 text-white px-4 py-2 transition">Track</button>
+        <button
+          type="button"
+          disabled
+          class="bg-black/40 text-white px-4 py-2 transition md:rounded-l-lg"
+        >
+          Track
+        </button>
 
         <input
           v-model="searchTerm"
@@ -57,13 +63,19 @@ function handleTrackClick(track) {
           type="text"
           placeholder="Search for music..."
           @input="keypressed"
-          class="flex-1 p-3 outline-none text-gray-700"
+          class="flex-1 p-3 outline-none text-gray-700 w-full"
         />
-        <button type="" disabled class="bg-black/40 text-white px-4 py-2 transition">
+
+        <button
+          type="button"
+          disabled
+          class="bg-black/40 text-white px-4 py-2 transition md:rounded-r-lg"
+        >
           <span class="text-lg">🎵</span>
         </button>
       </div>
     </div>
+
 
     <!-- Loader -->
     <div v-if="isLoading" class="flex justify-center items-center py-10">
