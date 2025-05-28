@@ -112,7 +112,7 @@ function handleTrackClick(track) {
       class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-2 py-8"
     >
       <div
-        class="bg-white rounded-xl w-full max-w-lg sm:max-w-sm p-4 sm:p-6 relative overflow-y-auto max-h-full shadow-xl"
+        class="bg-white rounded-xl w-full max-w-sm p-3 sm:p-5 relative overflow-y-auto max-h-[90vh] shadow-xl"
       >
         <!-- Close button -->
         <button
@@ -127,6 +127,7 @@ function handleTrackClick(track) {
       </div>
     </div>
   </transition>
+
 </template>
 
 <style scoped>
