@@ -14,7 +14,7 @@ const keypressed = async () => {
   var val = searchTerm.value
   var typ = 'track'
 
-  if (!searchTerm.value) return
+  if (!searchTerm.value){results.value="";   return} 
   isLoading.value = true // Start loading
   try {
     const data = await searchSpotify(typ, val)
