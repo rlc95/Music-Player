@@ -31,6 +31,7 @@ const initPlayer = async (videoId) => {
 
   isLoading.value = true
 
+
   if (player.value) {
     player.value.loadVideoById(videoId)
     isPlaying.value = true
@@ -46,6 +47,8 @@ const initPlayer = async (videoId) => {
         }
       }
     })
+
+    
   }
 }
 
@@ -67,7 +70,7 @@ watch(
   async (newTrack) => {
     if (!newTrack) return
 
-    const query = `${newTrack.name} ${newTrack.artists.map(a => a.name).join(' ')}`
+     const query = ` ${newTrack.name} ${newTrack.artists.map(a => a.name).join(' ')}`
     try {
       const response = await axios.get(
         'https://www.googleapis.com/youtube/v3/search',
@@ -77,10 +80,13 @@ watch(
             q: query,
             key: 'AIzaSyAKIb7x1KMkSbXDoPdxIJjWud0GJx68_BA',
             maxResults: 1,
-            type: 'video'
+            type: 'video',
+            videoEmbeddable: 'true'
           }
         }
       )
+
+    
       const videoId = response.data.items[0]?.id.videoId
       youtubeVideoId.value = videoId || ''
 
@@ -91,11 +97,14 @@ watch(
       console.error('YouTube search failed:', err)
       isLoading.value = false
     }
+
   },
   { immediate: true }
+
 )
 
 const togglePlayback = () => {
+
   if (!player.value) return
   if (isPlaying.value) {
     player.value.pauseVideo()
@@ -114,9 +123,9 @@ const togglePlayback = () => {
       alt="Album Art"
       class="rounded-xl w-full mb-4"
     />
-    <h2 class="text-xl text-white/80 font-semibold mb-1">{{ track.name }}</h2>
+    <h2 class="text-xl text-white/80 font-semibold mb-1">{{track.name }}</h2>
     <p class="text-white/80 mb-4">
-      {{ track.artists.map(a => a.name).join(', ') }}
+      {{  track.artists.map(a => a.name).join(', ')  }}
     </p>
 
     <!-- Custom Controls -->
