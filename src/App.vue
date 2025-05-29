@@ -14,7 +14,7 @@ const keypressed = async () => {
   var val = searchTerm.value
   var typ = 'track'
 
-  if (!searchTerm.value){results.value="";   return} 
+  if (!searchTerm.value){ results.value="";   return} 
   isLoading.value = true // Start loading
   try {
     const data = await searchSpotify(typ, val)
@@ -42,7 +42,35 @@ function handleTrackClick(track) {
 <template>
   <Navbar />
 
-  <main class="pt-24 min-h-screen bg-gray-500 px-4 flex flex-col items-center">
+   <!-- 🌌 Background Lottie Animation -->
+
+
+   <div class="bg-gray-500">
+
+  <lottie-player src="/animations/music.json"
+    background="transparent"
+    speed="1"
+    style="position: fixed; top: 0; left: 0; width: 100%; height: 80%; z-index: 1; pointer-events: none; margin-top: 110px;"
+    loop
+    autoplay
+  ></lottie-player>
+
+
+
+   <lottie-player
+  src="/animations/anim.json"
+  background="transparent"
+  speed="1"
+  style="position: fixed; top: 0; left: 0; width: 100%; height: 80%; z-index: 0; pointer-events: none; margin-top: 110px;"
+  loop
+  autoplay
+></lottie-player>
+   
+
+
+
+
+  <main class="relative z-10 pt-24 min-h-screen px-4 flex flex-col items-center">
     <!-- 🔍 Search Field -->
     <div class="w-full px-4 md:max-w-md mb-6">
       <div
@@ -76,6 +104,8 @@ function handleTrackClick(track) {
       </div>
     </div>
 
+   
+
 
     <!-- Loader -->
     <div v-if="isLoading" class="flex justify-center items-center py-10">
@@ -105,19 +135,21 @@ function handleTrackClick(track) {
     </div>
   </main>
 
+</div>
+
   <!-- 🎵 Modal for Player -->
   <transition name="fade">
     <div
       v-if="showModal"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-2 py-8"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 bg-opacity-50 px-2 py-8"
     >
       <div
-        class="bg-white rounded-xl w-full max-w-sm p-3 sm:p-5 relative overflow-y-auto max-h-[90vh] shadow-xl"
+        class="bg-black/60 rounded-xl w-full max-w-sm p-3 sm:p-5 relative overflow-y-auto max-h-[90vh] shadow-xl"
       >
         <!-- Close button -->
         <button
           @click="showModal = false"
-          class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl"
+          class="absolute top-2 right-2 text-white/80 hover:text-gray-800 text-2xl"
         >
           &times;
         </button>

@@ -108,14 +108,14 @@ const togglePlayback = () => {
 </script>
 
 <template>
-  <div class="bg-white shadow-lg rounded-xl p-6 max-w-md w-full text-center">
+  <div class="bg-black/30 shadow-lg rounded-xl p-6 max-w-md w-full text-center">
     <img
       :src="track.album.images[0]?.url"
       alt="Album Art"
       class="rounded-xl w-full mb-4"
     />
-    <h2 class="text-xl font-semibold mb-1">{{ track.name }}</h2>
-    <p class="text-gray-500 mb-4">
+    <h2 class="text-xl text-white/80 font-semibold mb-1">{{ track.name }}</h2>
+    <p class="text-white/80 mb-4">
       {{ track.artists.map(a => a.name).join(', ') }}
     </p>
 
@@ -123,7 +123,7 @@ const togglePlayback = () => {
     <div v-if="youtubeVideoId && !track.preview_url" class="mt-4 relative inline-flex items-center justify-center">
       <button
         @click="togglePlayback"
-        class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 relative"
+        class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-700 relative"
         :disabled="isLoading"
       >
         <span v-if="!isLoading">{{ isPlaying ? 'Pause' : 'Play' }}</span>
@@ -138,7 +138,7 @@ const togglePlayback = () => {
 
     <!-- Volume Control -->
     <div class="mt-4 flex items-center justify-center gap-4">
-      <label class="text-sm text-gray-700">Volume</label>
+      <label class="text-sm text-white/80">Volume</label>
       <input
         type="range"
         min="0"
@@ -153,13 +153,13 @@ const togglePlayback = () => {
     <div class="mt-4 flex justify-center gap-6">
       <button
         @click="skip(-10)"
-        class="text-indigo-600 hover:text-indigo-800 text-lg font-medium"
+        class="text-indigo-500 hover:text-indigo-800 text-lg font-medium"
       >
         ⏪ Back
       </button>
       <button
         @click="skip(10)"
-        class="text-indigo-600 hover:text-indigo-800 text-lg font-medium"
+        class="text-indigo-500 hover:text-indigo-800 text-lg font-medium"
       >
         ⏩ Skip
       </button>
