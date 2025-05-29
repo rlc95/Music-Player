@@ -4,12 +4,14 @@ import Player from './components/Player.vue'
 import { ref } from 'vue'
 import { searchSpotify } from './api/spotify'
 const isLoading = ref(false)
+import TypedText from './components/TypedText.vue'
+
 
 const searchTerm = ref('')
 const results = ref([])
 const showModal = ref(false)
 
-const keypressed = async () => {
+const keypressed = async () =>{ 
   console.log('Searching for:', searchTerm.value)
   var val = searchTerm.value
   var typ = 'track'
@@ -35,7 +37,7 @@ function handleTrackClick(track) {
   showModal.value = true
 }
 
-</script>
+</script >
 
 
 
@@ -48,29 +50,48 @@ function handleTrackClick(track) {
    <div class="bg-gray-500">
 
   <lottie-player src="/animations/music.json"
-    background="transparent"
-    speed="1"
-    style="position: fixed; top: 0; left: 0; width: 100%; height: 80%; z-index: 1; pointer-events: none; margin-top: 110px;"
-    loop
-    autoplay
-  ></lottie-player>
+      background="transparent"
+      speed="1"
+      style="position: fixed; top: 0; left: 0; width: 100%; height: 75%; z-index: 1; pointer-events: none; margin-top: 200px;"
+      loop
+      autoplay
+    ></lottie-player>
 
 
 
    <lottie-player
-  src="/animations/anim.json"
-  background="transparent"
-  speed="1"
-  style="position: fixed; top: 0; left: 0; width: 100%; height: 80%; z-index: 0; pointer-events: none; margin-top: 110px;"
-  loop
-  autoplay
-></lottie-player>
+      src="/animations/anim.json"
+      background="transparent"
+      speed="1"
+      style="position: fixed; top: 0; left: 0; width: 100%; height: 75%; z-index: 0; pointer-events: none; margin-top: 200px;"
+      loop
+      autoplay
+    ></lottie-player>
    
 
 
 
 
   <main class="relative z-10 pt-24 min-h-screen px-4 flex flex-col items-center">
+
+
+    <div class="text-center mb-6 max-w-xl px-4 relative z-20">
+    <h1 class="text-xl md:text-3xl font-bold text-white drop-shadow">
+      Welcome to Your Music Playground
+    </h1>
+    <TypedText
+      :strings="[
+        'Search tracks instantly 🎵',
+        'Build your ultimate playlist 🎧',
+        'Explore artists and albums 🎤',
+        'Feel the rhythm, live the beat 🥁'
+      ]"
+      :typeSpeed="50"
+      :backSpeed="30"
+      :loop="true"
+    />
+    </div>
+
     <!-- 🔍 Search Field -->
     <div class="w-full px-4 md:max-w-md mb-6">
       <div

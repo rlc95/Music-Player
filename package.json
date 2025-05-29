@@ -15,7 +15,9 @@
     "axios": "^1.9.0",
     "lottie-web": "^5.13.0",
     "tsparticles": "^3.8.1",
+    "typed.js": "^2.1.0",
     "vue": "^3.5.13",
+    "vue-typed-js": "^0.1.2",
     "vue3-particles": "^2.12.0"
   },
   "devDependencies": {
