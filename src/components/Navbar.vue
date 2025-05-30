@@ -25,9 +25,9 @@
 
     <!-- Mobile Nav -->
     <ul v-if="isOpen" class="absolute top-full left-0 w-full bg-black/80 text-white flex flex-col space-y-2 p-4 md:hidden">
-      <li><a href="#" class="hover:text-gray-300">Home</a></li>
-      <li><a href="#" class="hover:text-gray-300">About</a></li>
-      <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+      <li><a href="/" class="hover:text-gray-300">Home</a></li>
+      <li><a href="/about" class="hover:text-gray-300">About</a></li>
+      <li><a href="/contact" class="hover:text-gray-300">Contact</a></li>
     </ul>
   </nav>
 </template>
