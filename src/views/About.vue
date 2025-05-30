@@ -3,12 +3,12 @@
       <div class="max-w-4xl mx-auto">
         <h1 class="text-3xl font-bold  mb-4">About Us</h1>
         <p class="text-lg text-gray-300 mb-8">
-          Welcome to <span class="font-semibold text-primary">BeatFlow</span> — your gateway to a world of music.
+          Welcome to <span class="font-semibold text-primary">RlcMusic</span> — your gateway to a world of music.
         </p>
   
         <div class="space-y-6 text-gray-400 text-base leading-relaxed">
           <p>
-            At BeatFlow, we believe music should be accessible, personalized, and immersive. Our platform lets you explore millions of tracks, create playlists, and discover artists that match your mood and taste.
+            At RlcMusic, we believe music should be accessible, personalized, and immersive. Our platform lets you explore millions of tracks, create playlists, and discover artists that match your mood and taste.
           </p>
   
           <ul class="space-y-4">
